@@ -23,7 +23,7 @@ stage('Compile') {
   steps {
     // Compile the app and its dependencies
     sh "chmod 777 ./gradlew"
-    sh "echo <password> | sudo -S <cmd>" 
+    //sh "echo <password> | sudo -S <cmd>" 
     sh "sudo ./gradlew compiledebugSources"
   }
 }

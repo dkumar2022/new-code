@@ -26,6 +26,14 @@ stage('Compile') {
     sh './gradlew'
   }
 }
+    
+    stage('Build') {
+  steps {
+    // Compile the app and its dependencies
+    sh './gradlew assemble${env.BUILD_TYPE}'
+    sh './gradlew generatePomFileForLibraryPublication'
+  }
+}
 
 stage('Publish') {
   steps {

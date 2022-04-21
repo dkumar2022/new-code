@@ -23,14 +23,14 @@ stage('Compile') {
   steps {
     // Compile the app and its dependencies
     sh 'chmod 777 ./gradlew'
-    sh './gradlew compile${env.BUILD_TYPE}Sources'
+    sh "./gradlew compile${env.BUILD_TYPE}Sources"
   }
 }
     
     stage('Build') {
   steps {
     // Compile the app and its dependencies
-    sh './gradlew assemble${env.BUILD_TYPE}'
+    sh "./gradlew assemble${env.BUILD_TYPE}"
     sh './gradlew generatePomFileForLibraryPublication'
   }
 }

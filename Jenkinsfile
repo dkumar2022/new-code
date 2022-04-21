@@ -23,14 +23,14 @@ stage('Compile') {
   steps {
     // Compile the app and its dependencies
     sh 'chmod 777 ./gradlew'
-    sh "./gradlew compile${env.BUILD_TYPE}Sources"
+    sh "./gradlew compile${BUILD_TYPE}Sources"
   }
 }
     
     stage('Build') {
   steps {
     // Compile the app and its dependencies
-    sh "./gradlew assemble${env.BUILD_TYPE}"
+    sh "./gradlew assemble${BUILD_TYPE}"
     sh './gradlew generatePomFileForLibraryPublication'
   }
 }
@@ -38,9 +38,9 @@ stage('Compile') {
 stage('Publish') {
   steps {
      //Archive the APKs so that they can be downloaded from Jenkins
-     archiveArtifacts "**/${APP_NAME}-${env.BUILD_TYPE}.apk"
+     archiveArtifacts "**/${APP_NAME}-${BUILD_TYPE}.apk"
      //Archive the ARR and POM so that they can be downloaded from Jenkins
-     archiveArtifacts "**/${APP_NAME}-${env.BUILD_TYPE}.aar, **/*pom-   default.xml*"
+     archiveArtifacts "**/${APP_NAME}-${BUILD_TYPE}.aar, **/*pom-   default.xml*"
   }
 }
     // Put your stages here

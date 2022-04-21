@@ -23,7 +23,7 @@ stage('Compile') {
   steps {
     // Compile the app and its dependencies
     sh 'chmod 777 ./gradlew'
-    sh './gradlew'
+    sh './gradlew compileSources'
   }
 }
 

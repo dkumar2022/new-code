@@ -30,9 +30,9 @@ stage('Compile') {
 stage('Publish') {
   steps {
      //Archive the APKs so that they can be downloaded from Jenkins
-     archiveArtifacts "**/${APP_NAME}-${BUILD_TYPE}.apk"
+     archiveArtifacts "**/${APP_NAME}-${env.BUILD_TYPE}.apk"
      //Archive the ARR and POM so that they can be downloaded from Jenkins
-     archiveArtifacts "**/${APP_NAME}-${BUILD_TYPE}.aar, **/*pom-   default.xml*"
+     archiveArtifacts "**/${APP_NAME}-${env.BUILD_TYPE}.aar, **/*pom-   default.xml*"
   }
 }
     // Put your stages here

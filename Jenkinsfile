@@ -22,6 +22,7 @@ pipeline {
 stage('Compile') {
   steps {
     // Compile the app and its dependencies
+    sh "chmod 777 $ANDROID_HOME -R"
     sh 'chmod 777 ./gradlew'
     sh "./gradlew compiledebugSources"
   }

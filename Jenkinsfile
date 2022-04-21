@@ -24,6 +24,7 @@ stage('Compile') {
     // Compile the app and its dependencies
     sh 'chmod 777 ./gradlew'
     sh './gradlew'
+    sh './gradlew assembleRelease'
   }
 }
     // Put your stages here

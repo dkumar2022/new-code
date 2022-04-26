@@ -5,6 +5,7 @@ plugins {
 
 android {
     compileSdk 30
+    buildtoolversion "7.4.2"
 
     defaultConfig {
         applicationId "com.ez.jenkins"

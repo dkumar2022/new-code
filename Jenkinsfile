@@ -31,6 +31,7 @@ stage('Compile') {
     stage('Build') {
   steps {
     // Compile the app and its dependencies
+     env.BUILD_TYPE = 'release'
     sh "./gradlew assemble${BUILD_TYPE}"
     sh './gradlew generatePomFileForLibraryPublication'
   }

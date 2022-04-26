@@ -13,7 +13,7 @@ pipeline {
     script {
       if (env.BRANCH_NAME == 'main' || env.CHANGE_TARGET == 'develop') {
         env.BUILD_TYPE = 'debug'
-      } else if (env.BRANCH_NAME == 'main' || env.CHANGE_TARGET == 'master') {
+      } else if (env.BRANCH_NAME == 'main' || env.CHANGE_TARGET == 'main') {
         env.BUILD_TYPE = 'release'
       }
     }
